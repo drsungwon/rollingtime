@@ -1,0 +1,229 @@
+<!--
+The MIT License (MIT)
+
+Copyright (c) 2015 Sungwon Lee
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<!--------------------------------------------------------------->
+<!-- initially programmed by Sungwon Lee, drsungwon@khu.ac.kr --->
+<!-- 2015.03.08                                               --->
+<!--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+    	<title>Rolling-Paper</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/handlebars.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/barcodescanner.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/CorHttpd.js"></script>
+
+<!------------------------>
+<!-- Basic Test Start   -->	
+<!------------------------>
+
+
+<!------------------------>
+<!-- Basic Test End     -->	
+<!------------------------>
+
+	</head>
+
+	<body>
+
+		<!-- Begin main page -->
+		<div data-role="page" id="pageHome">
+			<div data-role="main" class="ui-content">
+				<h2 align="center">Welcome to <i>RollingPaper</i></h2>
+				<ul data-role="listview" data-inset="true" data-split-theme="b">
+
+<!------------------->
+<!-- Test Features -->	
+<!------------------->
+
+					<li>
+						<a ontouchend="app.scan()">
+<!--						<img src="chrome.png"> -->
+							<h2>코드 인식</h2>
+							<p>QR코드와 Bar코드를 카메라로 인식합니다.</p>
+							</a>
+						<a ontouchend="app.scan()"></a>
+					</li>		
+					
+					<li>
+						<a href="#page_webserver">
+<!--						<img src="chrome.png"> -->
+							<h2>Web 서버 관리</h2>
+							<p>스마트폰 안의 웹서버를 구동 및 정지 합니다.</p>
+							</a>
+						<a href="#page_webserver"></a>
+					</li>	
+											
+
+<!------------------->
+<!-- Divider       -->	
+<!------------------->
+						
+					<li data-role="divider" data-theme="a">선택 기능</li>			
+					
+<!------------------->
+<!-- Basic Write   -->	
+<!------------------->
+
+					<li>					
+						<a href="#page_write" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-left">
+<!--						<img src="firefox.png"> -->
+							<h2>쓰기</h2>  
+							<p>방문 장소에 자신이 작성한 글을 남깁니다.</p>
+						</a>
+						<a href="#page_write"></a>
+					</li>
+					
+<!------------------->
+<!-- Basic Read    -->	
+<!------------------->					
+					
+					<li>
+						<a href="./html/read.html" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-left" data-rel="dialog" data-transition="pop">
+<!--						<img src="chrome.png"> -->
+							<h2>읽기</h2>
+							<p>방문 장소에 다른 사람이 남긴 글을 읽습니다.</p>
+							</a>
+						<a href="./html/read.html" data-rel="dialog" data-transition="pop"></a>
+					</li>					
+					
+<!------------------->
+<!-- Basic About   -->	
+<!------------------->
+					
+					<li>
+						<a href="./html/about.html" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">
+<!--						<img src="firefox.png"> -->
+							<h2>누구</h2>  
+							<p>방문 장소에 대한 정보를 읽습니다.</p>
+						</a>
+						<a href="./html/about.html"></a>
+					</li>
+										
+				</ul>
+			</div>
+		</div> 			
+		<!-- end main page -->
+		
+<!------------------------>
+<!-- Basic Write Start  -->	
+<!------------------------>
+			
+		<div data-role="page" data-dialog="true" id="page_write">
+		
+			<div data-role="header">
+				<h1>쓰기</h1>
+			</div>
+
+			<div class="ui_content" data-role="content">
+<!--			<h3>Leave your message</h3> -->
+				<form id="myform" action="" method="post">
+					<div data-role="fieldcontain">
+						<form method="post" action="">
+							<div>
+        						<textarea name="write_msg" id="write_msg"></textarea>
+							</div>
+							<input type="submit" class="ui-btn" value="작성한 글 남기기">
+						</form> 
+					</div>	      
+				</form>
+				
+				<form method="post" action="">
+					<label for="minutes">작성하신 글을 몇분 뒤에 볼수 있도록 할까요?</label>
+					<input type="range" name="minutes" id="minutes" value="60" min="0" max="360">
+				</form>
+			</div>
+
+			<div data-role="footer">
+				<h1>경희대학교 모바일컨버전스연구실</h1>
+			</div>
+			
+		</div> 		
+
+<!------------------------>
+<!-- Basic Write End    -->	
+<!------------------------>
+		
+<!------------------------>
+<!-- Basic Test Start   -->	
+<!------------------------>
+			
+		<div data-role="page" data-dialog="true" id="page_webserver">
+				
+			<div data-role="header">
+				<h1>스마트폰 웹서버</h1>
+			</div>
+
+			<div id="fullpage">
+
+				<a data-role="button" data-corners="true" align="center" id='url'></a>
+
+				<ul data-role="listview" data-inset="true" data-dividertheme="b"> 
+                     
+					<li>
+						<a onclick="app.startServer('htdocs');">
+							<h2>서버 시작</h2>
+							</a>
+						<a onclick="app.startServer('htdocs');"></a>
+					</li>
+
+					<li>
+						<a onclick="app.stopServer();">
+							<h2>서버 중지</h2>
+							</a>
+						<a onclick="app.stopServer();"></a>
+					</li>
+								
+				</ul>			
+				
+			</div>
+			
+			<div data-role="footer">
+				<h1>경희대학교 모바일컨버전스연구실</h1>
+			</div>
+
+		</div> 
+    
+<!------------------------>
+<!-- Basic Test End     -->	
+<!------------------------>
+
+		<script type="text/javascript">
+     	   app.initialize();     	   
+   		</script>
+
+	</body>
+	
+</html>

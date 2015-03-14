@@ -1,0 +1,77 @@
+<!--
+The MIT License (MIT)
+
+Copyright (c) 2015 Sungwon Lee
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<!--------------------------------------------------------------->
+<!-- initially programmed by Sungwon Lee, drsungwon@khu.ac.kr --->
+<!-- 2015.03.08                                               --->
+<!--------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+    	<title>Rolling-Paper</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	</head>
+	
+	<body>
+
+  		<!-- Begin: Main tweet list view -->
+  		<section id="pageTweetList" data-role="page">
+	  		<header data-role="header" data-position="fixed">
+		  		<h1>읽기</h1>
+			</header>
+			<div class="content" data-role="content">
+				<ul data-role="listview">
+					<li><p>글1</p></li>
+					<li><p>글2</p></li>
+					<li><p>글3</p></li>
+					<li><p>글4</p></li>
+					<li><p>글5</p></li>
+				</ul>
+			</div>
+			<footer data-role="footer" data-position="fixed"><h1>경희대학교 모바일컨버전스연구실</h1></footer>
+		</section>
+		<!-- End: Main tweet list view -->
+	
+		<!-- Begin: Tweet detail view -->
+		<section id="pageTweetDetail" data-role="page">
+			<header data-role="header"><h1>읽기</h1></header>
+			<div class="content" data-role="content">
+				<div class="container-tweet">
+					<p>메시지가 있을 자리입니다.</p>
+				</div>
+			</div>
+			<footer data-role="footer"><h1>경희대학교 모바일컨버전스연구실</h1></footer>
+		</section>
+		<!-- End: Tweet detail view -->
+	
+  </body>
+
+</html>
