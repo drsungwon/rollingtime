@@ -1,0 +1,6 @@
+com.chariotsolutions.nfc.plugin 0.4.6 "NFC"
+com.phonegap.plugins.barcodescanner 2.0.1 "BarcodeScanner"
+com.rjfun.cordova.httpd 0.9.2 "CorHttpd"
+org.apache.cordova.device 0.3.0 "Device"
+org.apache.cordova.dialogs 0.3.0 "Notification"
+org.apache.cordova.vibration 0.3.13 "Vibration"
